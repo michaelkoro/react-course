@@ -3,6 +3,19 @@ import usersList from "../../model/users-list";
 
 
 class Register extends Component {
+  constructor(props){
+    super(props);
+    this.state = { countries: [], selectedCountry: []}
+    this.GetCounries();
+  }
+
+  async GetCounries(){
+    let res = await fetch("https://restcountries.eu/rest/v2/all?fields=name;flag;");
+    let body = await res.json();
+    console.log(body);
+  }
+  
+  
   register = () => {
     let userName = this.refs.userName.value;
     let firstName = this.refs.Firstname.value;
@@ -24,6 +37,11 @@ class Register extends Component {
     }
     else alert("one or more of the fields are wrong");
   };
+
+  ChangeSelectedCountry = event => {
+    let country = this.state.countries.find(country => country.name === event.target.value);
+    this.setState({selectedCountry: country});
+  }
 
   CheckNameValidity  = name => {
       if (name.length >= 2 && name.length <= 15 && name.match("^[a-zA-Z]+$"))
