@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.header img {
+  height: 70px;
+  width: 70px;
+}
