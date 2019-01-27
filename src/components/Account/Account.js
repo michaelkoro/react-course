@@ -22,6 +22,8 @@ class Account extends Component {
           <button>
             <Link to="/account/register">register</Link>
           </button>
+          <br/>
+          <br/>
           <Route exact path="/account/login" component={Login} />
           <Route exact path="/account/register" component={Register} />
         </div>

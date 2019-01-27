@@ -15,7 +15,7 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <p>© All Rightes Are Reserved {new Date().getFullYear()}</p>
+        <p>© All Rightes Reserved {new Date().getFullYear()}</p>
       </footer>
     );
   }

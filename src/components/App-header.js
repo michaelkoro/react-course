@@ -45,8 +45,8 @@ class Header extends Component {
               Products
             </button>
             <img
-              src="http://www.vincegolangco.com/wp-content/uploads/2010/12/batman-for-facebook.jpg"
-              alt="batman"
+              src="https://i.kisscc0.com/20180815/vcq/kisscc0-facebook-computer-icons-user-profile-silhouette-bl-ninja-fb-profile-5b744db18bd8d9.9421314415343487215728.png"
+              alt="user"
             />
             <button type="button" name="Cart">
               My Cart
