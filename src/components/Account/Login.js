@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import usersList from "../../model/users-list";
+import Register from "./Register";
 
 class Login extends Component {
   login = () => {
@@ -16,21 +16,22 @@ class Login extends Component {
   };
 
   CheckUser = user => {
-    if (user.length >= 3 && user.length <= 15 && user.match("^[a-zA-Z]+$") && this.FindUser(user)){
+    if (user.length >= 3 && user.length <= 15 && user.match("^[a-zA-Z]+$")) {
       return true;
     }
-    return false; 
+    return false;
   };
 
   FindUser = user => {
-    for (let x in usersList){
-      if(x.userName === user){
+    console.log(Register.users);
+    for (let x in Register.users) {
+      if (x.userName === user) {
         return true;
       }
     }
     alert("user does not exist");
     return false;
-  }
+  };
 
   CheckPassword = password => {
     if (!(password.length >= 5 && password.length <= 15)) return false;

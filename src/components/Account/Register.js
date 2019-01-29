@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import usersList from "../../model/users-list";
+//import usersList from "../../model/users-list";
 import CountryName from "../Country/Name";
 import CountryFlag from "../Country/Flag";
 import CountryDropDown from "../Country/DropDown";
@@ -7,6 +7,7 @@ import CountryDropDown from "../Country/DropDown";
 class Register extends Component {
   constructor(props) {
     super(props);
+    this.users = [];
     this.state = { countries: [], selectedCountry: undefined };
     this.GetCounries();
   }
@@ -24,7 +25,7 @@ class Register extends Component {
     let firstName = this.refs.Firstname.value;
     let lastName = this.refs.LastName.value;
     let password = this.refs.password.value;
-    let country = this.refs.Country.value;
+    let country = this.state.selectedCountry.name;
     if (
       this.CheckNameValidity(firstName) &&
       this.CheckNameValidity(lastName) &&
@@ -38,9 +39,9 @@ class Register extends Component {
         password: password,
         country: country
       };
-      usersList.push(user);
+      this.users.push(user);
       alert("user registered");
-      console.log(usersList);
+      console.log(this.users);
     } else alert("one or more of the fields are wrong");
   };
 
