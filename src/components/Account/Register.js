@@ -86,7 +86,7 @@ class Register extends Component {
         <br />
         <br />
         <CountryDropDown
-          countryArray={this.state.countries}
+          countries={this.state.countries}
           ChangeSelectedCountry={this.ChangeSelectedCountry}
         />
 
