@@ -1,4 +1,5 @@
 import React from "react";
+import AppCountryInfo from "./AppCountryInfo";
 
 const countryDropDown = p => (
   <select
@@ -6,10 +7,8 @@ const countryDropDown = p => (
       p.ChangeSelectedCountry(e.target.value);
     }}
   >
-    {p.countries.map((elemnt, index) => (
-      <option value={elemnt.name} key={index}>
-        {elemnt.name}
-      </option>
+    {p.countries.map(elemnt => (
+      <AppCountryInfo countryName={elemnt.name} countryFlag={elemnt.flag} />
     ))}
   </select>
 );
